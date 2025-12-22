@@ -15,6 +15,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { CozyProvider, useClient } from 'cozy-client'
 import { NativeIntentProvider } from 'cozy-intent'
 
+import { KeyboardProvider } from 'react-native-keyboard-controller'
+
 import rnperformance, {
   configurePerformances
 } from '/app/domain/performances/measure'
@@ -358,28 +360,30 @@ const Wrapper = () => {
 
   return (
     <>
-      <RestartProvider>
-        <CryptoWebView setHasCrypto={setHasCrypto} />
-        {hasCrypto && (
-          <Provider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-              <HttpServerProvider>
-                <HomeStateProvider>
-                  <SplashScreenProvider>
-                    <SecureBackgroundSplashScreenWrapper>
-                      <ThemeProvider>
-                        <PermissionsChecker>
-                          <WrappedApp />
-                        </PermissionsChecker>
-                      </ThemeProvider>
-                    </SecureBackgroundSplashScreenWrapper>
-                  </SplashScreenProvider>
-                </HomeStateProvider>
-              </HttpServerProvider>
-            </PersistGate>
-          </Provider>
-        )}
-      </RestartProvider>
+      <KeyboardProvider>
+        <RestartProvider>
+          <CryptoWebView setHasCrypto={setHasCrypto} />
+          {hasCrypto && (
+            <Provider store={store}>
+              <PersistGate loading={null} persistor={persistor}>
+                <HttpServerProvider>
+                  <HomeStateProvider>
+                    <SplashScreenProvider>
+                      <SecureBackgroundSplashScreenWrapper>
+                        <ThemeProvider>
+                          <PermissionsChecker>
+                            <WrappedApp />
+                          </PermissionsChecker>
+                        </ThemeProvider>
+                      </SecureBackgroundSplashScreenWrapper>
+                    </SplashScreenProvider>
+                  </HomeStateProvider>
+                </HttpServerProvider>
+              </PersistGate>
+            </Provider>
+          )}
+        </RestartProvider>
+      </KeyboardProvider>
     </>
   )
 }

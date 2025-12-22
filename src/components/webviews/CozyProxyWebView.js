@@ -1,6 +1,7 @@
 import { useFocusEffect, useNavigation } from '@react-navigation/native'
 import React, { useCallback, useState, useEffect } from 'react'
-import { AppState, KeyboardAvoidingView, Platform, View } from 'react-native'
+import { AppState, Platform, View } from 'react-native'
+import { KeyboardAvoidingView } from 'react-native-keyboard-controller'
 
 import { useClient } from 'cozy-client'
 import Minilog from 'cozy-minilog'
