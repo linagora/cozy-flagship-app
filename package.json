@@ -203,7 +203,7 @@
     "@op-engineering/op-sqlite": "14.1.4"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "browserslist": {
     "production": [
