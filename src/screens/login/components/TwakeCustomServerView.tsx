@@ -98,10 +98,10 @@ export const TwakeCustomServerView = ({
     setEmailInput(input)
   }
 
-  const handleLoginByUrl = async (): Promise<void> => {
+  const handleLoginByUrl = async (input: string): Promise<void> => {
     setError(undefined)
     try {
-      const sanitizedInput = sanitizeUrlInput(urlInput)
+      const sanitizedInput = sanitizeUrlInput(input)
 
       const details = await fetchRegistrationDetails(new URL(sanitizedInput))
 
@@ -130,10 +130,10 @@ export const TwakeCustomServerView = ({
     }
   }
 
-  const handleLoginByEmail = async (): Promise<void> => {
+  const handleLoginByEmail = async (input: string): Promise<void> => {
     setError(undefined)
     try {
-      const loginUri = await getLoginUri(emailInput)
+      const loginUri = await getLoginUri(input)
 
       if (!loginUri) {
         setError(t('screens.companyServer.companyServerNotFound'))
@@ -194,7 +194,9 @@ export const TwakeCustomServerView = ({
                     label="Email"
                     onChangeText={handleEmailInput}
                     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                    onSubmitEditing={handleLoginByEmail}
+                    onSubmitEditing={(): Promise<void> =>
+                      handleLoginByEmail(emailInput)
+                    }
                     returnKeyType="go"
                     value={emailInput}
                     autoCapitalize="none"
@@ -222,7 +224,9 @@ export const TwakeCustomServerView = ({
                     label={t('screens.companyServer.textFieldLabel')}
                     onChangeText={handleUrlInput}
                     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                    onSubmitEditing={handleLoginByUrl}
+                    onSubmitEditing={(): Promise<void> =>
+                      handleLoginByUrl(urlInput)
+                    }
                     returnKeyType="go"
                     value={urlInput}
                     autoCapitalize="none"
@@ -259,7 +263,11 @@ export const TwakeCustomServerView = ({
           >
             <Button
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
-              onPress={isLoginByEmail ? handleLoginByEmail : handleLoginByUrl}
+              onPress={
+                isLoginByEmail
+                  ? (): Promise<void> => handleLoginByEmail(emailInput)
+                  : (): Promise<void> => handleLoginByUrl(urlInput)
+              }
               variant="primary"
               label={t('screens.companyServer.buttonLogin')}
               style={styles.loginButton}
