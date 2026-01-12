@@ -131,6 +131,12 @@ export const TwakeCustomServerView = ({
   }
 
   const handleLoginByEmail = async (input: string): Promise<void> => {
+    // FIXME: Remove when every Cozy users have been migrated to Twake account
+    if (input.endsWith('.mycozy.cloud')) {
+      await handleLoginByUrl(emailInput)
+      return
+    }
+
     setError(undefined)
     try {
       const loginUri = await getLoginUri(input)
