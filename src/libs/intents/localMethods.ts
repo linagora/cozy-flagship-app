@@ -10,6 +10,7 @@ import {
   PostMeMessageOptions
 } from 'cozy-intent'
 import Minilog from 'cozy-minilog'
+import flag from 'cozy-flags'
 
 import * as RootNavigation from '/libs/RootNavigation'
 import { isIapAvailable } from '/app/domain/iap/services/availableOffers'
@@ -64,12 +65,23 @@ export const asyncLogout = async (client?: CozyClient): Promise<null> => {
     throw new Error('Logout should not be called with undefined client')
   }
 
+  const signupUrl = flag('signup.url') as string | undefined
+
   await sendKonnectorsLogs(client)
   await clearClientCachedData(client)
   await client.logout()
   await deleteKeychain()
   await clearCookies()
   await clearCozyData()
+
+  // Delete SSO cookie from In App Browser to avoid being reconnected to same account
+  // when logging in again
+  if (signupUrl) {
+    const logoutUrl = `${signupUrl}/logout?url=cozy://afterlogout`
+
+    await showInAppBrowser({ url: logoutUrl })
+  }
+
   RootNavigation.reset(routes.welcome, { screen: 'welcome' })
   return Promise.resolve(null)
 }

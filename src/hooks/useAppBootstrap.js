@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { deconstructCozyWebLinkWithSlug } from 'cozy-client'
 
 import { handleLogsDeepLink } from '/app/domain/logger/deeplinkHandler'
+import { handleLogoutDeepLink } from '/app/domain/authentication/utils/deeplinkHandler'
 import rnperformance from '/app/domain/performances/measure'
 import { SentryCustomTags, setSentryTag } from '/libs/monitoring/Sentry'
 import { manageIconCache } from '/libs/functions/iconTable'
@@ -187,6 +188,10 @@ export const useAppBootstrap = client => {
       log.debug(`🔗 Linking URL is ${url}`)
 
       if (handleLogsDeepLink(url, client)) {
+        return
+      }
+
+      if (handleLogoutDeepLink(url)) {
         return
       }
 
