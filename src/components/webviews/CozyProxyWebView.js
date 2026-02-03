@@ -1,6 +1,12 @@
 import { useFocusEffect, useNavigation } from '@react-navigation/native'
 import React, { useCallback, useState, useEffect } from 'react'
-import { AppState, KeyboardAvoidingView, Platform, View } from 'react-native'
+import {
+  AppState,
+  KeyboardAvoidingView,
+  Keyboard,
+  Platform,
+  View
+} from 'react-native'
 
 import { useClient } from 'cozy-client'
 import Minilog from 'cozy-minilog'
@@ -16,6 +22,29 @@ import { styles } from '/components/webviews/CozyProxyWebView.styles'
 const log = Minilog('CozyProxyWebView')
 
 const HTML_CONTENT_EXPIRATION_DELAY_IN_MS = 23 * 60 * 60 * 1000
+
+// FIXME: When we update React Native and our libs to support fully edge to edge display
+// we will be able to remove this hack
+// https://github.com/facebook/react-native/issues/29614#issuecomment-3235493157
+function useBehavior() {
+  const [behaviour, setBehaviour] = useState('height')
+
+  useEffect(() => {
+    const showListener = Keyboard.addListener('keyboardDidShow', () => {
+      setBehaviour('height')
+    })
+    const hideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setBehaviour(undefined)
+    })
+
+    return () => {
+      showListener.remove()
+      hideListener.remove()
+    }
+  }, [])
+
+  return behaviour
+}
 
 export const CozyProxyWebView = ({
   slug,
@@ -37,6 +66,7 @@ export const CozyProxyWebView = ({
     Date.now()
   )
   const navigation = useNavigation()
+  const behavior = useBehavior()
 
   const reload = useCallback(() => {
     log.debug('Reloading CozyProxyWebView')
@@ -115,7 +145,7 @@ export const CozyProxyWebView = ({
   return (
     <Wrapper
       style={{ ...styles.view, ...wrapperStyle }}
-      behavior="height"
+      behavior={behavior}
       keyboardVerticalOffset={props.keyboardVerticalOffset || 0}
     >
       {state.source ? (
