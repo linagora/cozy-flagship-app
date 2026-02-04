@@ -131,7 +131,9 @@ export const fetchPublicData = async client => {
  */
 
 export const fetchCozyDataForSlug = async (slug, client, cookie) => {
-  const cacheKey = `CozyData_${slug}`
+  // FIXME: all commented code is related to offline
+  // ATM offline is disabled so we commented caching
+  // const cacheKey = `CozyData_${slug}`
   const stackClient = client.getStackClient()
 
   const options = cookie
@@ -145,34 +147,33 @@ export const fetchCozyDataForSlug = async (slug, client, cookie) => {
       }
     : undefined
 
-  try {
-    const result = await stackClient.fetchJSON(
-      'GET',
-      `/apps/${slug}/open`,
-      undefined,
-      options
-    )
+  // try {
+  const result = await stackClient.fetchJSON(
+    'GET',
+    `/apps/${slug}/open`,
+    undefined,
+    options
+  )
 
-    storeClientCachedData(client, cacheKey, result)
-
-    return {
-      source: 'stack',
-      data: result.data
-    }
-  } catch (err) {
-    if (err.message === 'Network request failed') {
-      const cachedResult = await getClientCachedData(client, cacheKey)
-
-      if (cachedResult) {
-        return {
-          source: 'cache',
-          data: cachedResult.data
-        }
-      }
-    }
-
-    throw err
+  // storeClientCachedData(client, cacheKey, result)
+  return {
+    source: 'stack',
+    data: result.data
   }
+  // } catch (err) {
+  //   if (err.message === 'Network request failed') {
+  //     const cachedResult = await getClientCachedData(client, cacheKey)
+
+  //     if (cachedResult) {
+  //       return {
+  //         source: 'cache',
+  //         data: cachedResult.data
+  //       }
+  //     }
+  //   }
+
+  //   throw err
+  // }
 }
 
 /**
