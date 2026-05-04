@@ -77,6 +77,13 @@ target 'CozyReactNative' do
       target.build_configurations.each do |config|
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', '_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION']
       end
+
+      # Fix for Xcode 26.4 build error
+      if target.name == 'fmt'
+        target.build_configurations.each do |config|
+          config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+        end
+      end
     end
 
     # https://medium.com/@ssthil75/how-i-solved-the-asset-validation-failed-invalid-executable-error-in-xcode-16-on-m2-macs-00b21ce0ba17
