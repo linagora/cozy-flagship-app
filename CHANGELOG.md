@@ -1,10 +1,21 @@
-# 1.1.39
+# 1.1.40
 
 ## ✨ Features
 
 
 ## 🐛 Bug Fixes
 
+
+## 🔧 Tech
+
+
+# 1.1.39
+
+## ✨ Features
+
+
+## 🐛 Bug Fixes
+* Fix infinite loading of container app like Calendar or Visio ([PR #1342](https://github.com/cozy/cozy-flagship-app/pull/1342))
 
 ## 🔧 Tech
 
