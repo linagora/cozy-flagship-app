@@ -7,7 +7,8 @@ import {
   checkIsRedirectOutside,
   checkIsSameApp,
   checkIsSlugSwitch,
-  openUrlInAppBrowser
+  openUrlInAppBrowser,
+  isSignupUrl
 } from '/libs/functions/urlHelpers'
 import {
   checkIsPreviewableLink,
@@ -68,6 +69,11 @@ export const interceptNavigation = ({
     const clouderyOfferUrlWithInAppPurchaseParams =
       formatClouderyOfferUrlWithInAppPurchaseParams(initialRequest.url)
     showClouderyOffer(clouderyOfferUrlWithInAppPurchaseParams)
+    return false
+  }
+
+  if (isSignupUrl(initialRequest.url)) {
+    openUrlInAppBrowser(initialRequest.url)
     return false
   }
 

@@ -1,9 +1,10 @@
-import Minilog from 'cozy-minilog'
 import { Platform } from 'react-native'
 import { InAppBrowser } from 'react-native-inappbrowser-reborn'
 
 import { generateWebLink } from 'cozy-client'
 import { deconstructCozyWebLinkWithSlug } from 'cozy-client/dist/helpers'
+import flag from 'cozy-flags'
+import Minilog from 'cozy-minilog'
 
 const log = Minilog('CozyWebView')
 
@@ -234,4 +235,15 @@ export const openUrlInAppBrowser = url => {
       throw error
     }
   }
+}
+
+/**
+ * Compare URL with sign up URL
+ *
+ * @param {string} url
+ * @returns {boolean}
+ */
+export const isSignupUrl = url => {
+  const signupUrl = flag('signup.url')
+  return url.startsWith(signupUrl)
 }
