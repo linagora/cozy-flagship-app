@@ -1,4 +1,4 @@
-# 1.1.39
+# 1.1.40
 
 ## ✨ Features
 
@@ -8,6 +8,18 @@
 
 ## 🔧 Tech
 
+
+# 1.1.39
+
+## ✨ Features
+
+
+## 🐛 Bug Fixes
+* Fix infinite loading of container app like Calendar or Visio ([PR #1342](https://github.com/cozy/cozy-flagship-app/pull/1342))
+* Fix "Create business account" link ([PR #1344](https://github.com/cozy/cozy-flagship-app/pull/1344))
+
+## 🔧 Tech
+* Update Android API to 36 ([PR #1345](https://github.com/cozy/cozy-flagship-app/pull/1345))
 
 # 1.1.38
 
