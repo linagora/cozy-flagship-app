@@ -62,3 +62,11 @@ describe('supportedLanguages', () => {
     )
   })
 })
+
+describe('fallback language', () => {
+  it('falls back to English for a key missing from the current language', () => {
+    i18n.addResource('en', 'translation', 'test.onlyInEnglish', 'English')
+
+    expect(i18n.getFixedT('de')('test.onlyInEnglish')).toBe('English')
+  })
+})

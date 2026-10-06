@@ -55,6 +55,9 @@ _i18n
   .init({
     resources: resources,
     lng: language,
+    // A key missing from a translation falls back to English instead of
+    // showing the raw key
+    fallbackLng: defaultLocale,
     keySeparator: '.',
     interpolation: {
       escapeValue: false
