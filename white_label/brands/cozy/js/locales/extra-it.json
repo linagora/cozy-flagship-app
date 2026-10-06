@@ -1,0 +1,44 @@
+{
+  "logout_dialog": {
+    "content": "Vuoi davvero disconnetterti dal tuo Twake?"
+  },
+  "screens": {
+    "clouderyOffer": {
+      "backButton": "TORNA AL MIO TWAKE",
+      "success": {
+        "body": "Il tuo Twake è in fase di aggiornamento.\nRiceverai una notifica non appena l'acquisto sarà completato."
+      }
+    },
+    "cozyBlocked": {
+      "title": "Il tuo Twake è stato bloccato"
+    },
+    "cozyNotFound": {
+      "body": "Non abbiamo trovato nessun Twake a questo indirizzo. Potrebbe trattarsi di un errore di battitura. Per verificarlo, controlla l'indirizzo del tuo Twake nell'email che ti abbiamo inviato al momento della sua creazione.",
+      "title": "Questo indirizzo Twake non esiste."
+    },
+    "SecureScreen": {
+      "passwordprompt_body": "L'accesso al tuo dispositivo non è protetto. Scegli una password per proteggere l'accesso al tuo Twake.",
+      "passwordprompt_title": "Proteggi l'accesso al tuo Twake",
+      "pinprompt_body": "Accedi più rapidamente alla tua app attivando lo sblocco con codice PIN"
+    },
+    "login": {
+      "invalidMagicCode": "Il link per accedere al tuo Twake è troncato o scaduto"
+    },
+    "welcome": {
+      "body": "Accedi subito al tuo Cloud personale, la casa digitale in cui riunire tutti i tuoi dati",
+      "buttonLogin": "Ho già un Cloud personale",
+      "title": "Cloud personale"
+    }
+  },
+  "modals": {
+    "IconChangedModal": {
+      "description": "L'icona dell'applicazione 'Twake' è stata modificata."
+    },
+    "ErrorToken": {
+      "body": "Sembra che tu abbia revocato questo dispositivo dal tuo Twake. Per accedere di nuovo ai tuoi dati, effettua di nuovo l'accesso. Se non sei stato tu a eseguire questa azione, non esitare a contattarci all'indirizzo <linkTag>{{email}}</linkTag>."
+    }
+  },
+  "software": {
+    "name": "Applicazione mobile Twake"
+  }
+}

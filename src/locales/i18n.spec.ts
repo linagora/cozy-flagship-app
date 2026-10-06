@@ -1,7 +1,11 @@
 import i18n from 'i18next'
 import { getLocales } from 'react-native-localize'
 
-import { changeLanguage, defaultLanguage } from '/locales/i18n'
+import {
+  changeLanguage,
+  defaultLanguage,
+  supportedLanguages
+} from '/locales/i18n'
 
 const mockGetLocales = getLocales as jest.Mock
 
@@ -48,5 +52,13 @@ describe('changeLanguage', () => {
     await changeLanguage(languageCode)
 
     expect(spyChangeLanguage).toHaveBeenCalledWith(defaultLanguage)
+  })
+})
+
+describe('supportedLanguages', () => {
+  it('includes every bundled translation', () => {
+    expect(supportedLanguages).toEqual(
+      expect.arrayContaining(['en', 'fr', 'es', 'de', 'it'])
+    )
   })
 })

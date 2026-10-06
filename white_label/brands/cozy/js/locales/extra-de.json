@@ -1,0 +1,44 @@
+{
+  "logout_dialog": {
+    "content": "Möchten Sie sich wirklich von Ihrem Twake abmelden?"
+  },
+  "screens": {
+    "clouderyOffer": {
+      "backButton": "ZURÜCK ZU MEINEM TWAKE",
+      "success": {
+        "body": "Ihr Twake wird gerade aktualisiert.\nSie erhalten eine Benachrichtigung, sobald Ihr Kauf abgeschlossen ist."
+      }
+    },
+    "cozyBlocked": {
+      "title": "Ihr Twake wurde gesperrt"
+    },
+    "cozyNotFound": {
+      "body": "Unter dieser Adresse wurde kein Twake gefunden. Vielleicht handelt es sich um einen Tippfehler. Prüfen Sie die Adresse Ihres Twake in der E-Mail, die wir Ihnen bei der Erstellung gesendet haben.",
+      "title": "Diese Twake-Adresse existiert nicht."
+    },
+    "SecureScreen": {
+      "passwordprompt_body": "Der Zugriff auf Ihr Gerät ist nicht geschützt. Wählen Sie ein Passwort, um den Zugriff auf Ihr Twake zu schützen.",
+      "passwordprompt_title": "Zugriff auf Ihr Twake schützen",
+      "pinprompt_body": "Greifen Sie schneller auf Ihre App zu, indem Sie das Entsperren per PIN-Code aktivieren"
+    },
+    "login": {
+      "invalidMagicCode": "Der Link für den Zugriff auf Ihr Twake ist unvollständig oder abgelaufen"
+    },
+    "welcome": {
+      "body": "Greifen Sie jetzt auf Ihre persönliche Cloud zu, das digitale Zuhause für all Ihre Daten",
+      "buttonLogin": "Ich habe bereits eine persönliche Cloud",
+      "title": "Persönliche Cloud"
+    }
+  },
+  "modals": {
+    "IconChangedModal": {
+      "description": "Das Symbol der App „Twake“ wurde geändert."
+    },
+    "ErrorToken": {
+      "body": "Sie haben dieses Gerät offenbar in Ihrem Twake widerrufen. Um wieder auf Ihre Daten zuzugreifen, melden Sie sich bitte erneut an. Falls Sie diese Aktion nicht selbst durchgeführt haben, kontaktieren Sie uns gerne unter <linkTag>{{email}}</linkTag>."
+    }
+  },
+  "software": {
+    "name": "Twake Mobile-App"
+  }
+}

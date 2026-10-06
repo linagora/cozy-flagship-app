@@ -1,9 +1,11 @@
 import _i18n, { Resource } from 'i18next'
 import intervalPlural from 'i18next-intervalplural-postprocessor'
 import 'intl'
+import 'intl/locale-data/jsonp/de.js'
 import 'intl/locale-data/jsonp/en.js'
 import 'intl/locale-data/jsonp/es.js'
 import 'intl/locale-data/jsonp/fr.js'
+import 'intl/locale-data/jsonp/it.js'
 import 'intl-pluralrules'
 import { initReactI18next, useTranslation } from 'react-i18next'
 import { getLocales } from 'react-native-localize'
@@ -12,9 +14,11 @@ import CozyClient from 'cozy-client'
 import Minilog from 'cozy-minilog'
 
 import strings from '/constants/strings.json'
+import de from '/locales/de.json'
 import en from '/locales/en.json'
 import es from '/locales/es.json'
 import fr from '/locales/fr.json'
+import it from '/locales/it.json'
 
 // Configuration
 intervalPlural.setOptions({
@@ -24,11 +28,13 @@ intervalPlural.setOptions({
   intervalSuffix: '_interval'
 })
 
-// Translation resources are loaded from the src/locales folder, and pulled in by the transifex-client
+// Translation resources are loaded from the src/locales folder
 const resources: Record<string, Resource> = {
   en: { translation: en },
   fr: { translation: fr },
-  es: { translation: es }
+  es: { translation: es },
+  de: { translation: de },
+  it: { translation: it }
 }
 
 const defaultLocale = strings.DEFAULT_LOCALE
@@ -37,7 +43,7 @@ const getDeviceLanguage = (): string => getLocales()[0]?.languageCode
 
 const deviceLanguage = getDeviceLanguage()
 
-// Gets the supported language code of the device (en, fr or es), or the default language code if the device language is not supported
+// Gets the supported language code of the device (en, fr, es, de or it), or the default language code if the device language is not supported
 const language = Object.prototype.hasOwnProperty.call(resources, deviceLanguage)
   ? deviceLanguage
   : defaultLocale
