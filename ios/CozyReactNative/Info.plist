@@ -49,7 +49,11 @@
 	<string>6.0</string>
 	<key>CFBundleLocalizations</key>
 	<array>
+		<string>en</string>
 		<string>fr</string>
+		<string>es</string>
+		<string>de</string>
+		<string>it</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
@@ -108,11 +112,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Afin de prendre des photos pour Drive ou MesPapiers afin d'importer des documents</string>
+	<string>To take photos and import documents into Drive or MesPapiers</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Permet le déverouillage de l'application en utilisant FaceID</string>
+	<string>Allows you to unlock the app using Face ID</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Pour faire un backup de vos photos</string>
+	<string>To back up your photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-Bold.ttf</string>

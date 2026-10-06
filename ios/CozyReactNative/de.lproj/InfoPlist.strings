@@ -1,0 +1,4 @@
+/* Permission prompts shown by iOS (Info.plist usage descriptions) */
+"NSCameraUsageDescription" = "Um Fotos aufzunehmen und Dokumente in Drive oder MesPapiers zu importieren";
+"NSFaceIDUsageDescription" = "Ermöglicht das Entsperren der App mit Face ID";
+"NSPhotoLibraryUsageDescription" = "Um Ihre Fotos zu sichern";

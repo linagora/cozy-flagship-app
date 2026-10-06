@@ -20,6 +20,7 @@
 		643009FE24043073DD6A15DE /* libPods-CozyReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA875020D8BE788449DD47FC /* libPods-CozyReactNative.a */; };
 		6B8CB25C2807246700E1F390 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CB25B2807246700E1F390 /* assets */; };
 		7585C5DE689CEA1E2E42E533 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3CE32CEBBEE23FC6729A5918 /* PrivacyInfo.xcprivacy */; };
+		80D3D1516F70F267F933B260 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E480C486F0D218B670D3B155 /* InfoPlist.strings */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		92832EDB00FF4C2EAD9F811A /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B0EC53D3AE4171BBD95A6D /* Inter-Bold.ttf */; };
 		94BEBCC36EFC4F1DDD8E6E50 /* libPods-CozyReactNative-CozyReactNativeDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6C35B4CE552A45F0087FDE /* libPods-CozyReactNative-CozyReactNativeDev.a */; };
@@ -48,6 +49,7 @@
 		E4F8716529DDEC1E00C52A35 /* mespapiers@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F8715E29DDEC1E00C52A35 /* mespapiers@3x.png */; };
 		E4F8716629DDEC1E00C52A35 /* base@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F8715F29DDEC1E00C52A35 /* base@3x.png */; };
 		E4F8716729DDEC1E00C52A35 /* base@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F8715F29DDEC1E00C52A35 /* base@3x.png */; };
+		F092436A1F1BC7DC11567FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E480C486F0D218B670D3B155 /* InfoPlist.strings */; };
 		F3B83720E44641879E6927C6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0572B798A7D41908174A427 /* Lato-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -94,16 +96,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CozyReactNative/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CozyReactNative/main.m; sourceTree = "<group>"; };
 		2161F5FB1C88F7A96C55ED73 /* Pods-CozyReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CozyReactNative.debug.xcconfig"; path = "Target Support Files/Pods-CozyReactNative/Pods-CozyReactNative.debug.xcconfig"; sourceTree = "<group>"; };
+		23046D50AA8FE613C1FE1932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = CozyReactNative/de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A6C35B4CE552A45F0087FDE /* libPods-CozyReactNative-CozyReactNativeDev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CozyReactNative-CozyReactNativeDev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7AA45128157D2D0052F4D8 /* CozyReactNative-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CozyReactNative-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C7AA45228157D2E0052F4D8 /* HttpServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
 		2C7AA454281584D30052F4D8 /* HttpServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpServer.m; sourceTree = "<group>"; };
 		3CE32CEBBEE23FC6729A5918 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = CozyReactNative/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4A318669B355C100619A2E81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = CozyReactNative/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50F2B234D59C91D520E179D6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CozyReactNative/fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52EEB447A7E47913D3A59CC3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = CozyReactNative/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5680E07156234AC2874D356F /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		6B8CB25B2807246700E1F390 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		79997E63AEB566EB66642538 /* Pods-CozyReactNative-CozyReactNativeDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CozyReactNative-CozyReactNativeDev.release.xcconfig"; path = "Target Support Files/Pods-CozyReactNative-CozyReactNativeDev/Pods-CozyReactNative-CozyReactNativeDev.release.xcconfig"; sourceTree = "<group>"; };
 		79D616F87DFFDD069B1F634E /* libPods-CozyReactNative-CozyReactNativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CozyReactNative-CozyReactNativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DC0D8475FB269A22F5870CB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = CozyReactNative/es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CozyReactNative/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90B0EC53D3AE4171BBD95A6D /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		997B98B12769CFD100089037 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = CozyReactNative/BootSplash.storyboard; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		E4F8715F29DDEC1E00C52A35 /* base@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "base@3x.png"; sourceTree = "<group>"; };
 		EBA740E658AB4C90BED7F6D9 /* Lato-Regular.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.woff2"; path = "../assets/fonts/Lato-Regular.woff2"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F0FE83EB30A90CA172DA3F49 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = CozyReactNative/it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB7AC79E047043178F1289F7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +208,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				E480C486F0D218B670D3B155 /* InfoPlist.strings */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				997B98B12769CFD100089037 /* BootSplash.storyboard */,
@@ -446,6 +454,10 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				es,
+				de,
+				it,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -484,6 +496,7 @@
 				F3B83720E44641879E6927C6 /* Lato-Regular.ttf in Resources */,
 				E4924AC32996438600F415CE /* GoogleService-Info.plist in Resources */,
 				7585C5DE689CEA1E2E42E533 /* PrivacyInfo.xcprivacy in Resources */,
+				80D3D1516F70F267F933B260 /* InfoPlist.strings in Resources */,
 				92832EDB00FF4C2EAD9F811A /* Inter-Bold.ttf in Resources */,
 				ACA0A767CBF24490B0ED8EC2 /* Inter-Regular.ttf in Resources */,
 			);
@@ -513,6 +526,7 @@
 				E4924AB629963CAD00F415CE /* Lato-Regular.ttf in Resources */,
 				E4924AC12996437D00F415CE /* GoogleService-Info.plist in Resources */,
 				162E2561D1F79143AC69FDE4 /* PrivacyInfo.xcprivacy in Resources */,
+				F092436A1F1BC7DC11567FD1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +879,18 @@
 				A98E5EB72A8CC8EF00CAC55D /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		E480C486F0D218B670D3B155 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A318669B355C100619A2E81 /* en */,
+				50F2B234D59C91D520E179D6 /* fr */,
+				7DC0D8475FB269A22F5870CB /* es */,
+				23046D50AA8FE613C1FE1932 /* de */,
+				F0FE83EB30A90CA172DA3F49 /* it */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
