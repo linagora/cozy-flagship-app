@@ -1,0 +1,222 @@
+{
+  "support": {
+    "email": "support@twake.app"
+  },
+  "konnectors": {
+    "errorDoubleRun": {
+      "title": "Account già in esecuzione",
+      "body": "Un account {{running_konnector}} è già in esecuzione. Non puoi eseguire due account contemporaneamente. Attendi la fine dell'esecuzione dell'account {{running_konnector}} prima di avviare il tuo account {{concurrent_konnector}}",
+      "button": "Ho capito"
+    }
+  },
+  "errors": {
+    "badUnlockPassword": "Le credenziali inserite non sono corrette, riprova.",
+    "badUnlockPin": "Il PIN inserito non è corretto, riprova",
+    "contactUs": "Un problema, un suggerimento? Contattaci all'indirizzo",
+    "offline_unsupported_title": "Impossibile caricare",
+    "offline_unsupported_message": "Questa applicazione non è disponibile offline",
+    "unknown_error": "Si è verificato un errore imprevisto, riprova.",
+    "reset": "Torna alla home",
+    "showDetails": "Mostra i dettagli dell'errore",
+    "serverError": "Si è verificato un errore durante l'elaborazione della richiesta",
+    "cacheCheckError": "Si è verificato un errore durante l'elaborazione della richiesta",
+    "print": "Stampa non riuscita, riprova.",
+    "shareFiles_other": "Non è stato possibile condividere i tuoi file, riprova.",
+    "shareFiles_interval": "(1)[Non è stato possibile condividere il tuo file, riprova.]||||(2-inf)[Non è stato possibile condividere i tuoi file, riprova.]",
+    "cozyUrlRequired": "L'indirizzo Twake è obbligatorio",
+    "hasMispelledCozy": "Ops, l'indirizzo non è corretto. Prova a scrivere \"cozy\" con la \"z\"!",
+    "noEmailAsCozyUrl": "L'indirizzo Twake non è il tuo indirizzo email"
+  },
+  "logout_dialog": {
+    "cancel": "Annulla",
+    "confirm": "Esci",
+    "content": "Vuoi davvero disconnetterti dal tuo Twake?",
+    "title": "Disconnessione"
+  },
+  "screens": {
+    "clouderyOffer": {
+      "backButton": "TORNA AL MIO TWAKE",
+      "iapProgress": "Acquisto in corso",
+      "error": {
+        "title": "Si è verificato un errore",
+        "tryAgain": "Riprova",
+        "backToOffers": "Torna alle offerte"
+      },
+      "success": {
+        "title": "Pagamento completato",
+        "body": "Il tuo Twake è in fase di aggiornamento.\nRiceverai una notifica non appena l'acquisto sarà completato.",
+        "close": "Chiudi"
+      }
+    },
+    "cozyBlocked": {
+      "body": "Se vuoi saperne di più, contattaci all'indirizzo <a id=\"mailto\" href=\"#\">support@twake.app</a>.",
+      "title": "Il tuo Twake è stato bloccato"
+    },
+    "cozyNotFound": {
+      "body": "Non abbiamo trovato nessun Twake a questo indirizzo. Potrebbe trattarsi di un errore di battitura. Per verificarlo, controlla l'indirizzo del tuo Twake nell'email che ti abbiamo inviato al momento della sua creazione.",
+      "title": "Questo indirizzo Twake non esiste."
+    },
+    "cozyNotOnboarded": {
+      "body": "Per completare la registrazione devi fare clic sull'email inviata al termine della registrazione. Se non trovi questa email, contattaci all'indirizzo <a id=\"mailto\" href=\"#\">support@twake.app</a>.",
+      "title": "Non hai completato la registrazione"
+    },
+    "genericError": {
+      "defaultBody": "Nell'app si è verificato un errore imprevisto",
+      "title": "Si è verificato un problema"
+    },
+    "managerError": {
+      "body": "Si è verificato un errore durante l'elaborazione del link di accesso",
+      "title": "Si è verificato un problema"
+    },
+    "lock": {
+      "password_label": "Password",
+      "pin_label": "Codice PIN",
+      "pin_title": "Inserisci il tuo PIN",
+      "promptCancel": "Annulla",
+      "promptSubtitle": "Usa la tua impronta digitale per autenticarti",
+      "promptTitle": "Autenticati",
+      "title": "Inserisci la tua password"
+    },
+    "SecureScreen": {
+      "confirm_pin_error": "I codici PIN non corrispondono",
+      "passwordprompt_body": "L'accesso al tuo dispositivo non è protetto. Scegli una password per proteggere l'accesso al tuo Twake.",
+      "passwordprompt_cta": "Scegli una password",
+      "passwordprompt_title": "Proteggi l'accesso al tuo Twake",
+      "pinprompt_body": "Accedi più rapidamente alla tua app attivando lo sblocco con codice PIN",
+      "pinprompt_cta": "Sblocca con un PIN",
+      "pinprompt_refusal": "No, grazie",
+      "pinprompt_title": "Semplifica lo sblocco dell'app",
+      "pinsave_step1_body": "Imposta il tuo PIN per sbloccare l'app dopo un periodo di inattività.",
+      "pinsave_step1_cta": "Continua",
+      "pinsave_step1_title": "Scegli il tuo PIN",
+      "pinsave_step2_body": "Per sicurezza, inserisci di nuovo il PIN scelto.",
+      "pinsave_step2_cta": "Fine",
+      "pinsave_step2_title": "Conferma il tuo PIN"
+    },
+    "login": {
+      "invalidMagicCode": "Il link per accedere al tuo Twake è troncato o scaduto"
+    },
+    "offline": {
+      "body": "Controlla la tua connessione a internet per accedere al tuo Twake.",
+      "title": "Nessuna connessione a internet"
+    },
+    "welcome": {
+      "body": "Accedi subito al tuo Cloud personale, la casa digitale in cui riunire tutti i tuoi dati",
+      "buttonSignin": "Crea",
+      "buttonLogin": "Ho già un Cloud personale",
+      "title": "Cloud personale"
+    },
+    "welcomeTwake": {
+      "body": "Accedi subito al tuo Twake Workplace, la casa digitale in cui riunire tutti i tuoi dati",
+      "buttonSignin": "Crea un Twake ID",
+      "buttonLogin": "Accedi",
+      "title": "Twake Workplace",
+      "useYourCompanyServer": "Usa il server della tua organizzazione",
+      "byContinuingYourAgreeingToOur": "Continuando, accetti la nostra",
+      "privacyPolicy": "Informativa sulla privacy"
+    },
+    "companyServer": {
+      "title": "Accedi",
+      "body": {
+        "byUrl": "Per accedere al tuo Twake, inserisci il suo URL",
+        "byEmail": "Per accedere al tuo Twake, inserisci il tuo indirizzo email dell'organizzazione"
+      },
+      "toggle": {
+        "url": "Inserisci l'URL del mio Twake",
+        "email": "Inserisci il mio indirizzo email dell'organizzazione"
+      },
+      "textFieldLabel": "URL",
+      "buttonLogin": "Avanti",
+      "companyServerNotFound": "Server dell'organizzazione non trovato"
+    }
+  },
+  "services": {
+    "backup": {
+      "backupRootName": "Backup da dispositivo mobile",
+      "notifications": {
+        "onProgressTitle": "Caricamento in corso",
+        "onProgressMessage": "Caricamento di {{filename}} in corso",
+        "backupSuccessTitle": "Backup di foto e video",
+        "backupSuccessBody_one": "Il backup è completato! {{backedUpMediaCount}}/{{count}} elemento salvato.",
+        "backupSuccessBody_other": "Il backup è completato! {{backedUpMediaCount}}/{{count}} elementi salvati.",
+        "backupPartialSuccessTitle": "Backup di foto e video",
+        "backupPartialSuccessBody_one": "Il backup è stato interrotto! {{backedUpMediaCount}}/{{count}} elemento salvato.",
+        "backupPartialSuccessBody_other": "Il backup è stato interrotto! {{backedUpMediaCount}}/{{count}} elementi salvati.",
+        "backupErrorTitle": "Ops",
+        "backupErrorBody": "Si è verificato un errore durante il backup. Apri l'app per maggiori dettagli."
+      },
+      "errors": {
+        "appKilled": "App chiusa",
+        "backupStopped": "Backup interrotto",
+        "fileNotFound": "File non trovato",
+        "fileTooBig": "File troppo grande",
+        "fileNotSupported": "File non supportato per il backup",
+        "platformNotSupported": "Piattaforma non supportata per il backup",
+        "configNotInitialized": "Configurazione locale del backup non inizializzata",
+        "quotaExceeded": "Spazio di archiviazione pieno",
+        "networkIssue": "Problema di rete",
+        "unknownIssue": "Problema sconosciuto",
+        "backupRunning": "Backup già in corso",
+        "backupPreparing": "Backup già in preparazione"
+      }
+    },
+    "upload": {
+      "notifications": {
+        "onProgressTitle": "Caricamento in corso",
+        "onProgressMessage": "Caricamento di un file in corso"
+      }
+    },
+    "osReceive": {
+      "documentType": "Tipo di documento:",
+      "submit": "Avanti",
+      "abort": "Indietro",
+      "nElementsTitle": "{{n}} elementi",
+      "errors": {
+        "uploadFailed": "Impossibile caricare {{filename}}"
+      },
+      "disableReasons": {
+        "multipleFiles": "Non è ancora possibile aggiungere più elementi contemporaneamente. Seleziona un solo elemento per continuare.",
+        "tooManyFiles": "Il numero di file ({{numberOfFiles}}) è troppo elevato per {{appname}} (max: {{maxNumberOfFiles}}).",
+        "incompatibleMime": "Il tipo o i tipi di file non sono compatibili con {{appname}}.",
+        "tooLargeFiles": "Il file o i file sono troppo grandi per essere trasferiti su {{appname}}."
+      },
+      "appNameOverrides": {
+        "mespapiers": "Documenti amministrativi",
+        "photo": "Foto",
+        "drive": "Altro tipo di file"
+      },
+      "shareFiles": {
+        "downloadingFiles": "Recupero dei tuoi file in corso…"
+      }
+    }
+  },
+  "modals": {
+    "ErrorToken": {
+      "title": "Accesso revocato",
+      "body": "Sembra che tu abbia revocato questo dispositivo dal tuo Twake. Per accedere di nuovo ai tuoi dati, effettua di nuovo l'accesso. Se non sei stato tu a eseguire questa azione, non esitare a contattarci all'indirizzo <linkTag>{{email}}</linkTag>.",
+      "button": "Accedi di nuovo"
+    },
+    "IconChangedModal": {
+      "description": "L'icona dell'applicazione 'Twake' è stata modificata."
+    },
+    "LogDisabledError": {
+      "title": "Impossibile inviare i log",
+      "body": "I log sono disattivati: attivali prima di inviarli di nuovo"
+    },
+    "OfflineFileError": {
+      "title": "Impossibile scaricare",
+      "body": "Questo file non è disponibile offline"
+    }
+  },
+  "software": {
+    "id": "amiral",
+    "name": "Applicazione mobile Twake"
+  },
+  "ui": {
+    "buttons": {
+      "forgotPassword": "Ho dimenticato la password",
+      "forgotPin": "Ho dimenticato il PIN",
+      "unlock": "Sblocca"
+    }
+  }
+}

@@ -27,7 +27,7 @@ export const checkCozyBrandIso = async (): Promise<boolean> => {
 }
 
 export const checkLanguages = (): boolean => {
-  const languages = ['en', 'es', 'fr']
+  const languages = ['en', 'es', 'fr', 'de', 'it']
 
   const areLangagesOk = languages.every(language =>
     areLanguagesEquivalent('en', language)
