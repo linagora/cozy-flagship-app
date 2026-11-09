@@ -13,6 +13,7 @@ import Minilog from 'cozy-minilog'
 import { isOfflineCompatible } from '/app/domain/offline/isOfflineCompatible'
 import rnperformance from '/app/domain/performances/measure'
 import { getErrorMessage } from '/libs/functions/getErrorMessage'
+import { isHomeUnavailable } from '/libs/functions/homeAvailability'
 import HttpServer from '/libs/httpserver/HttpServer'
 import { fetchAppDataForSlug } from '/libs/httpserver/indexDataFetcher'
 import { getServerBaseFolder } from '/libs/httpserver/httpPaths'
@@ -235,7 +236,7 @@ export const HttpServerProvider = (
       })
       return {
         html: false,
-        source: 'none'
+        source: slug === 'home' && isHomeUnavailable() ? 'none' : 'offline'
       }
     }
   }
