@@ -2,6 +2,11 @@ import CozyClient from 'cozy-client'
 
 import { fetchAppDataForSlug } from '/libs/httpserver/indexDataFetcher'
 import { fetchCozyDataForSlug } from '/libs/client'
+import {
+  isHomeUnavailable,
+  markHomeAvailable,
+  markHomeUnavailable
+} from '/libs/functions/homeAvailability'
 
 jest.mock('../client', () => ({
   fetchCozyDataForSlug: jest.fn()
@@ -33,6 +38,57 @@ describe('indexDataFetcher', () => {
       const result = await fetchAppDataForSlug('home', client)
 
       expect(result).toStrictEqual(expectedResult)
+    })
+
+    describe('home availability', () => {
+      const client = {
+        getStackClient: (): { uri: string } => ({
+          uri: 'http://localhost:8080'
+        })
+      } as CozyClient
+      const notFound = Object.assign(new Error('Not found'), { status: 404 })
+
+      beforeEach(() => {
+        markHomeAvailable()
+      })
+
+      it('marks home unavailable when home answers a 404', async () => {
+        mockedFetchCozyDataForSlug.mockRejectedValue(notFound)
+
+        await expect(fetchAppDataForSlug('home', client)).rejects.toBe(notFound)
+
+        expect(isHomeUnavailable()).toBe(true)
+      })
+
+      it('ignores a 404 from another app', async () => {
+        mockedFetchCozyDataForSlug.mockRejectedValue(notFound)
+
+        await expect(fetchAppDataForSlug('drive', client)).rejects.toBe(
+          notFound
+        )
+
+        expect(isHomeUnavailable()).toBe(false)
+      })
+
+      it('ignores other home errors', async () => {
+        const serverError = Object.assign(new Error('Oops'), { status: 500 })
+        mockedFetchCozyDataForSlug.mockRejectedValue(serverError)
+
+        await expect(fetchAppDataForSlug('home', client)).rejects.toBe(
+          serverError
+        )
+
+        expect(isHomeUnavailable()).toBe(false)
+      })
+
+      it('clears the unavailable state when home answers again', async () => {
+        markHomeUnavailable()
+        mockedFetchCozyDataForSlug.mockResolvedValue(mockStackResult)
+
+        await fetchAppDataForSlug('home', client)
+
+        expect(isHomeUnavailable()).toBe(false)
+      })
     })
   })
 })

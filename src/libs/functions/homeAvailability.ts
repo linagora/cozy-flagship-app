@@ -2,18 +2,22 @@ import { EventEmitter } from 'events'
 
 import { useEffect, useState } from 'react'
 
-const HOME_UNAVAILABLE = 'HOME_UNAVAILABLE'
+const HOME_AVAILABILITY_CHANGED = 'HOME_AVAILABILITY_CHANGED'
 
 let homeUnavailable = false
 
 const homeAvailabilityEventHandler = new EventEmitter()
 
-export const markHomeUnavailable = (): void => {
-  if (homeUnavailable) return
+const setHomeUnavailable = (value: boolean): void => {
+  if (homeUnavailable === value) return
 
-  homeUnavailable = true
-  homeAvailabilityEventHandler.emit(HOME_UNAVAILABLE)
+  homeUnavailable = value
+  homeAvailabilityEventHandler.emit(HOME_AVAILABILITY_CHANGED)
 }
+
+export const markHomeUnavailable = (): void => setHomeUnavailable(true)
+
+export const markHomeAvailable = (): void => setHomeUnavailable(false)
 
 export const isHomeUnavailable = (): boolean => homeUnavailable
 
@@ -21,16 +25,22 @@ export const useIsHomeUnavailable = (): boolean => {
   const [unavailable, setUnavailable] = useState(isHomeUnavailable)
 
   useEffect(() => {
-    setUnavailable(isHomeUnavailable())
-
-    const handleHomeUnavailable = (): void => {
-      setUnavailable(true)
+    const handleHomeAvailabilityChanged = (): void => {
+      setUnavailable(isHomeUnavailable())
     }
 
-    homeAvailabilityEventHandler.on(HOME_UNAVAILABLE, handleHomeUnavailable)
+    handleHomeAvailabilityChanged()
+
+    homeAvailabilityEventHandler.on(
+      HOME_AVAILABILITY_CHANGED,
+      handleHomeAvailabilityChanged
+    )
 
     return () => {
-      homeAvailabilityEventHandler.off(HOME_UNAVAILABLE, handleHomeUnavailable)
+      homeAvailabilityEventHandler.off(
+        HOME_AVAILABILITY_CHANGED,
+        handleHomeAvailabilityChanged
+      )
     }
   }, [])
 
