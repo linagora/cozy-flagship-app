@@ -6,12 +6,18 @@ import {
   generateWebLink,
   useClient
 } from 'cozy-client'
+import Minilog from 'cozy-minilog'
 
 import rnperformance from '/app/domain/performances/measure'
 import { CozyProxyWebView } from '/components/webviews/CozyProxyWebView'
 import { navigateToApp } from '/libs/functions/openApp'
 import { useIsHomeUnavailable } from '/libs/functions/homeAvailability'
-import { getOrFetchDefaultRedirectionUrl } from '/libs/defaultRedirection/defaultRedirection'
+import {
+  getOrFetchDefaultRedirectionUrl,
+  getParamsWithDefaultRedirectionUrl
+} from '/libs/defaultRedirection/defaultRedirection'
+import { formatRedirectLink } from '/libs/functions/formatRedirectLink'
+import { getErrorMessage } from '/libs/functions/getErrorMessage'
 import {
   consumeRouteParameter,
   useInitialParam
@@ -22,6 +28,8 @@ import { devlog } from '/core/tools/env'
 import { ScreenIndexes, useFlagshipUI } from '/app/view/FlagshipUI'
 import { OsReceiveScreen } from '/app/view/OsReceive/OsReceiveScreen'
 import { useFilesToUpload } from '/app/view/OsReceive/state/OsReceiveState'
+
+const log = Minilog('HomeView')
 
 /**
  * @typedef Props
@@ -50,6 +58,7 @@ const HomeView = ({ route, navigation }) => {
     navigation
   )
   const filesToUpload = useFilesToUpload()
+  const hasFilesToUpload = filesToUpload.length > 0
   const isHomeUnavailable = useIsHomeUnavailable()
   const [markNameHome] = useState(() => rnperformance.mark('HomeView'))
 
@@ -85,33 +94,52 @@ const HomeView = ({ route, navigation }) => {
   // Some instances don't have the home app installed, so it answers a 404 and
   // this view has nothing to render. Every route leading back here would show
   // that empty view, so redirect to the instance default redirection instead,
-  // each time this screen gets focused
+  // or to settings when that redirection is home or can't be resolved. Files
+  // received from the OS still need the upload screen rendered by this view.
   useFocusEffect(
     useCallback(() => {
-      if (!isHomeUnavailable) return
+      if (!isHomeUnavailable || hasFilesToUpload) return undefined
+
+      let isStillFocused = true
 
       const redirectToDefaultRedirection = async () => {
-        const defaultRedirectionUrl = await getOrFetchDefaultRedirectionUrl(
-          client
-        )
+        try {
+          const defaultRedirectionUrl = await getOrFetchDefaultRedirectionUrl(
+            client
+          )
 
-        if (!defaultRedirectionUrl) return
+          if (!isStillFocused) return
 
-        const subdomainType = client.capabilities?.flat_subdomains
-          ? 'flat'
-          : 'nested'
-        const { slug } = deconstructCozyWebLinkWithSlug(
-          defaultRedirectionUrl,
-          subdomainType
-        )
+          const { cozyAppFallbackURL } = getParamsWithDefaultRedirectionUrl(
+            defaultRedirectionUrl,
+            client
+          )
+          const href =
+            cozyAppFallbackURL ?? formatRedirectLink('settings/', client)
 
-        if (slug === 'home') return
+          if (!href) return
 
-        navigateToApp({ navigation, href: defaultRedirectionUrl, slug })
+          const subdomainType = client.capabilities.flat_subdomains
+            ? 'flat'
+            : 'nested'
+          const { slug } = deconstructCozyWebLinkWithSlug(href, subdomainType)
+
+          navigateToApp({ navigation, href, slug })
+        } catch (error) {
+          log.error(
+            `Could not redirect from unavailable home: ${getErrorMessage(
+              error
+            )}`
+          )
+        }
       }
 
       void redirectToDefaultRedirection()
-    }, [client, isHomeUnavailable, navigation])
+
+      return () => {
+        isStillFocused = false
+      }
+    }, [client, hasFilesToUpload, isHomeUnavailable, navigation])
   )
 
   useFocusEffect(
