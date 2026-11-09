@@ -31,6 +31,7 @@ import { launcherEvent } from '/libs/ReactNativeLauncher'
 import { useSession } from '/hooks/useSession'
 import ReloadInterceptorWebView from '/components/webviews/ReloadInterceptorWebView'
 import { getHostname } from '/libs/functions/getHostname'
+import { isHomeUnavailable } from '/libs/functions/homeAvailability'
 import { useIsSecureProtocol } from '/hooks/useIsSecureProtocol'
 import {
   BiometryEmitter,
@@ -77,6 +78,12 @@ export const CozyWebView = ({
   const [canGoBack, setCanGoBack] = useState(false)
 
   const handleBackPress = useCallback(() => {
+    // Without the home app, popping this screen would only redirect back to it
+    if (isFocused && !canGoBack && isHomeUnavailable()) {
+      BackHandler.exitApp()
+      return true
+    }
+
     if (!canGoBack || !isFocused) {
       return false
     }
