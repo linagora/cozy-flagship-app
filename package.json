@@ -200,7 +200,8 @@
     "webpack-dev-server": "3.11.2"
   },
   "resolutions": {
-    "@op-engineering/op-sqlite": "14.1.4"
+    "@op-engineering/op-sqlite": "14.1.4",
+    "cozy-dataproxy-lib/lodash": "^4.18.1"
   },
   "engines": {
     "node": ">=20"
