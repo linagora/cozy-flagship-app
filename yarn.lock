@@ -3340,6 +3340,11 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@babel/runtime@^7.21.0":
+  version "7.29.14"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.29.14.tgz#9ad0cc2addbbc8c46adaec9e90b21bb76d42b483"
+  integrity sha512-Y5tqevQaUAZhhj82BpYMNC1ssvLQTVAfwKdm8iy8qwmhvC2/CpcAu8OC+QEtjM7pMk7knx83u1Qj8gzkicyelw==
+
 "@babel/runtime@^7.22.5":
   version "7.22.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.6.tgz#57d64b9ae3cff1d67eb067ae117dac087f5bd438"
@@ -9443,18 +9448,18 @@ cozy-client@^57.6.0:
     sift "^6.0.0"
     url-search-params-polyfill "^8.0.0"
 
-cozy-client@^58.3.0:
-  version "58.3.0"
-  resolved "https://registry.yarnpkg.com/cozy-client/-/cozy-client-58.3.0.tgz#abccb6ab49712a2fe9c86b1f452ab65613fe9ad3"
-  integrity sha512-YwI3urghhmr/lrfTPvNYhK7+FGjz16uJmwxla1CaxhAMRWG+bQpFU17qpaex2yo3Ri+37IxYeD7OfZ6B+eXqMQ==
+cozy-client@^60.11.0:
+  version "60.45.0"
+  resolved "https://registry.yarnpkg.com/cozy-client/-/cozy-client-60.45.0.tgz#4c8bcd0e5a16edb79e36f91b3daffa0565054408"
+  integrity sha512-XmD7dMBXxmIlkgBluzM55LWE3RfSot4OiduHPvl81puq+K6/abE6su4EmwceHM7NeJDbMJvMhgQWOc+hgUQyvA==
   dependencies:
     "@cozy/minilog" "1.0.0"
     "@fastify/deepmerge" "^2.0.2"
     "@types/jest" "^26.0.20"
     "@types/lodash" "^4.14.170"
     btoa "^1.2.1"
-    cozy-stack-client "^58.0.0"
-    date-fns "2.29.3"
+    cozy-stack-client "^60.45.0"
+    date-fns "^2.30.0"
     fast-deep-equal "^3.1.3"
     json-stable-stringify "^1.0.1"
     lodash "^4.17.13"
@@ -9559,10 +9564,10 @@ cozy-stack-client@^57.2.0:
     mime "^2.4.0"
     qs "^6.7.0"
 
-cozy-stack-client@^58.0.0:
-  version "58.0.0"
-  resolved "https://registry.yarnpkg.com/cozy-stack-client/-/cozy-stack-client-58.0.0.tgz#de9082686d00d6f4ba9bd2b463df93be6b8de1ad"
-  integrity sha512-y462sU1Monpp6qZrTSpW7nAf/vYRYnBEFiqoaNUXX2kE7Ti3svUu9A/SoEu1jaE86iV5a/DKLMLY5GoOMyiYCQ==
+cozy-stack-client@^60.45.0:
+  version "60.45.0"
+  resolved "https://registry.yarnpkg.com/cozy-stack-client/-/cozy-stack-client-60.45.0.tgz#5e96e881db315f6d51ea05cc37cf2a40defd8d10"
+  integrity sha512-SAWEg0imKVDMSQJAh/5AN9F/g4xl1VSxHlEwQ0Q2V1V24IZLHPlNd5lKJDTKdC+yAPl0T4VyFq/V+fXdweH2ag==
   dependencies:
     detect-node "^2.0.4"
     mime "^2.4.0"
@@ -9967,6 +9972,13 @@ date-fns@2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
   integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
+
+date-fns@^2.30.0:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.30.0.tgz#f367e644839ff57894ec6ac480de40cae4b0f4d0"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 dayjs@^1.8.15:
   version "1.10.5"
