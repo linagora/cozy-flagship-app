@@ -60,7 +60,7 @@
     "cozy-device-helper": "^3.7.1",
     "cozy-flags": "^4.6.1",
     "cozy-intent": "^2.26.0",
-    "cozy-logger": "^1.10.0",
+    "cozy-logger": "^1.10.4",
     "cozy-minilog": "3.3.1",
     "cozy-pouch-link": "60.10.1",
     "cozy-realtime": "^5.6.4",
