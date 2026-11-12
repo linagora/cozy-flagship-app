@@ -56,7 +56,7 @@
     "base-64": "^1.0.0",
     "cozy-client": "^60.11.0",
     "cozy-clisk": "^0.38.1",
-    "cozy-dataproxy-lib": "3.5.0",
+    "cozy-dataproxy-lib": "4.15.9",
     "cozy-device-helper": "^3.7.1",
     "cozy-flags": "^4.6.1",
     "cozy-intent": "^2.26.0",
