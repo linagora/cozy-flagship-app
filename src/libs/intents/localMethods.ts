@@ -65,7 +65,7 @@ export const asyncLogout = async (client?: CozyClient): Promise<null> => {
     throw new Error('Logout should not be called with undefined client')
   }
 
-  const signupUrl = flag('signup.url') as string | undefined
+  const signupUrl = flag<string | undefined>('signup.url')
 
   await sendKonnectorsLogs(client)
   await clearClientCachedData(client)
