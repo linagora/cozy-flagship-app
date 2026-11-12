@@ -9475,10 +9475,10 @@ cozy-dataproxy-lib@3.5.0:
     react-type-animation "3.2.0"
     rooks "7.14.1"
 
-cozy-device-helper@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/cozy-device-helper/-/cozy-device-helper-2.7.0.tgz#573749997f18e5a1f11f720faec8c9bf2406beeb"
-  integrity sha512-jMzW7s4IDuMivbsP8fo1IWW1z5l0wJ0u440E0fQmdsi+Zm/L9GXFKthLuuceYqXlH6c/APUCfpozJqjFMMHU1A==
+cozy-device-helper@^3.7.1:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/cozy-device-helper/-/cozy-device-helper-3.8.0.tgz#89b2947198c39b3b57dc6c6273243045eb470b40"
+  integrity sha512-c//90YvZ5uIxhyWJy/9g8XTHVsST5eW4Nsd6+BXg9LJ/YVt3RO2HMjd1Afxvbg1fOcRMr5y1nkiLoFhTeiM35Q==
   dependencies:
     lodash "^4.17.19"
 
