@@ -9497,10 +9497,10 @@ cozy-intent@^2.26.0:
     cozy-minilog "^3.10.1"
     post-me "0.4.5"
 
-cozy-logger@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/cozy-logger/-/cozy-logger-1.10.0.tgz#c040081976921c73021f0acc81d515700241a3f1"
-  integrity sha512-cChOYvbZ0rtzo6MEY4+ZLniKaDv46V8fdJ0qgRcPjDE1dDrfVvxyRWsKrSGIw+LTBqdrlfDpPoqjEiYC24xr+A==
+cozy-logger@^1.10.4:
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/cozy-logger/-/cozy-logger-1.18.1.tgz#282219854519c99d807df8b03f031bc4ecc1c215"
+  integrity sha512-UpjxQz7bjvtR6nObRhhdYF1kpHDvj40geSnV+aiwI1Pj/ljj1D08B5VjKe4BNTgmRzVuqv2tEM4WVCztuh1fsQ==
   dependencies:
     chalk "^2.4.2"
     json-stringify-safe "5.0.1"
